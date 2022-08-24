@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var PORT = 8000;
+const port = process.env.PORT || 3000
 
 app.get("/:operator/:num1/:num2", (req, res) => {
   var operator = req.params.operator;
@@ -28,6 +28,6 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 
-app.listen(PORT, () => {
-  console.log("App listening on PORT:" + PORT);
+app.listen(port, () => {
+  console.log("App listening on PORT:" + port);
 });
